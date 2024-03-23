@@ -4,6 +4,7 @@
   <li>HTML</li>
   <li>CSS</li>
   <li>Javascript</li>
+  <li>Adobe Express</li>
 </ul>
 
 <h2>Objetivo do projeto:</h2>
