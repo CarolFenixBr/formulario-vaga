@@ -1,3 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 *{
     margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+}
+body{
+    background: linear-gradient(to right,rgb(98, 240, 245), rgb(241, 197, 130));
+    background-position: center;
+    background-size: cover;
+   
+}
+.container{
+    width: 390px;
+    height: 560px;
+    margin: 8% auto;
+    background: linear-gradient(to right, #2a63ce, #269cb1);
+    border-radius: 5px;
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+}
+h2{
+    text-align: center;
+    margin-bottom: 30PX;
+    color: #ffffff;
+}
+.container form{
+    width: 300px;
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    transition: 0.5s ;
+}
+form input{
+    width: 100%;
+    padding: 10px 5px;
+    margin: 5px 0;
+    border: 0;     
+    outline: none;
+    border-radius: 5px;
+}
+::placeholder{
+    color: #000000;
+}
+
+.btn-box{
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+}
+form button{
+    width: 120px;
+    height: 35px;
+    margin: 0 5px;
+    background: linear-gradient(to right, #000000, #2a63ce);
+    color: white;
+    border-radius: 30px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+#Form2{
+    left: 450px;
+}
+#Form3{
+    left: 450px;
+}
+.step-row{
+    width: 390px;
+    height: 40px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    box-sizing: 0 -1px -5px -1px #ffffff;
+    position: relative;    
+}
+.step-col{
+    width: 160px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+#progresso{
+    position: absolute;
+    height: 100%;
+    width: 130px;
+    background: linear-gradient(to right, #000000, #2a63ce);
+    
+}
+#progresso::after{
+    content: '';
+    height: 0;
+    width: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    position: absolute;
+    right: -20px;
+    top: 0;
+    border-left: 20px solid #2a63ce;
 }

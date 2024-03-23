@@ -3,9 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
+   <link rel="stylesheet" href="style.css">   
+  
+   <title>Formulário</title>
+   
 </head>
+
 <body>
-    
+    <div class="container">
+        <form id="Form1">
+            <h2>Registro</h2>                   
+            <input type="text" placeholder="E-mail" required>
+            <input type="text" placeholder="Apelido" required>
+            <input type="password" placeholder="Senha" required>
+            <input type="password" placeholder="Confirme a senha" required>
+
+            <div class="btn-box">
+                <button type="button" id="Prox1">Próximo</button>
+            </div>
+        </form>
+
+        <form id="Form2">
+            <h2>Dados pessoais</h2>                        
+            <input type="text" placeholder="Nome" required>
+            <input type="text" placeholder="Sobrenome" required>
+            <input type="text" placeholder="Telefone" required>
+            <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" id="dataNascimento" name="dataNascimento" required>
+           
+            <label for="profissao">Escolha sua profissão:</label>
+        <select  id="opcao" onchange="mostrarCampoTexto()" required>
+                    <option value="Engenharia da Computação">Análise e Desenvolvimento de Software</option>
+                    <option value="Engenharia da Computação">Ciência da Computação</option>
+                    <option value="Engenharia da Computação">Engenharia da Computação</option>
+                    <option value="Engenharia de Software">Engenharia de Software</option>
+                    <option value="Engenharia de Dados">Engenharia de Dados</option>
+                    <option value="Engenharia de Sistemas">Engenharia de Sistemas</option>                    
+                <option value="outra">Outra</option>
+        </select>
+        <input type="text" id="campoTexto" style="display: none;">
+
+            <div class="btn-box">
+                <button type="button" id="Volta1">voltar</button>
+                <button type="button" id="Prox2">Próximo</button>
+            </div>
+        </form>
+
+        <form id="Form3">
+            <h2>Informações adicionais</h2>                      
+            <input type="text" placeholder="LinkedIn" >
+            <input type="text" placeholder="GitHub" >
+            <input type="text" placeholder="Portfólio" >
+            <br>
+            <label for="redes">Como encontrou a vaga:</label>
+                <select id="rede" onchange="mostrarCampoTexto1()" required>
+                    <option value="Rede1">Google</option>
+                    <option value="Rede2">LinkedIn</option>
+                    <option value="Rede3">Site da empresa</option>
+                    <option value="Rede4">Indicação</option>                    
+                </select>
+                <input type="text" id="campoTexto1" style="display: none;" placeholder="Nome da pessoa que indicou">
+            
+            <label for="anexo">Anexar currículo</label>
+        <input type="file" id="anexo" name="anexo" accept=".pdf, .doc, .jpg">
+
+            <div class="btn-box">
+                <button type="button" id="Volta2">voltar</button>
+                 <button type="submit" value="Enviar">Enviar</button>
+            </div>
+        </form>
+
+        <div class="step-row">
+            <div id="progresso"></div>                 
+            <div class="step-col"><small>Step 1</small></div>
+            <div class="step-col"><small>Step 2</small></div>
+            <div class="step-col"><small>Step 3</small></div>
+               
+        </div>
+     
+
+
+    </div>
+
+<script>
+var Form1 = document.getElementById("Form1");
+var Form2 = document.getElementById("Form2");
+var Form3 = document.getElementById("Form3");
+
+var Prox1 = document.getElementById("Prox1");
+var Prox2 = document.getElementById("Prox2");
+var Volta1 = document.getElementById("Volta1");
+var Volta2 = document.getElementById("Volta2");
+
+var progresso = document.getElementById("progresso");
+
+
+Prox1.addEventListener("click", function() {
+    Form1.style.left = "-450px";
+    Form2.style.left = "40px";
+    progresso.style.width ="260px"
+});
+
+Prox2.addEventListener("click", function() {
+    Form2.style.left = "-450px";
+    Form3.style.left = "40px";
+    progresso.style.width ="390px"
+});
+
+Volta1.addEventListener("click", function() {
+    Form1.style.left = "40px";
+    Form2.style.left = "450px";
+    progresso.style.width ="130px"
+});
+
+Volta2.addEventListener("click", function() {
+    Form2.style.left = "40px";
+    Form3.style.left = "450px";
+    progresso.style.width ="260px"
+});
+
+
+function mostrarCampoTexto() {
+            const select = document.getElementById("opcao");
+            const campoTexto = document.getElementById("campoTexto");
+
+            if (select.value === "outra") {
+                campoTexto.style.display = "block";
+            } else {
+                campoTexto.style.display = "none";
+            }
+        }
+
+        function mostrarCampoTexto1() {
+            const select = document.getElementById("rede");
+            const campoTexto = document.getElementById("campoTexto1");
+
+            if (select.value === "Rede4") {
+                campoTexto.style.display = "block";
+            } else {
+                campoTexto.style.display = "none";
+            }
+        }
+        
+
+        
+</script>
+
 </body>
 </html>
